@@ -1,0 +1,66 @@
+.app {
+  min-height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  font-size: 16px;
+	font-family: 'Montserrat', sans-serif;
+	min-width: 320px;
+}
+
+.button-place {
+	min-height: 100vh;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.output-place {
+	height: 50vh;
+	background-color: #fff;
+	width: 50%;
+	border-radius: 1em;
+	margin: 2em;
+	padding: 2em;
+	overflow-y: auto;
+}
+
+.output-place p {
+	font-weight: 500;
+	font-size: 1.5em;
+	line-height: 2;
+}
+
+button {
+	font-size: 2em;
+	font-weight: 700;
+	padding: 1em 2em;
+	background-color: #29B5FF;
+	color: #fff;
+	border-radius: 0.5em;
+	border: none;
+	box-shadow: 0 8px #238DC6;
+	
+}
+
+button:active {
+	transform: translateY(8px);
+	box-shadow: none;
+}
+
+@media (max-width: 920px) {
+	.app {
+		flex-wrap: wrap;
+	}
+	.button-place {
+		min-height: 30vh;
+	}
+	.button-place,
+	.output-place {
+		width: 100%;
+	}
+	.output-place {
+		margin-top: 0;
+	}
+}

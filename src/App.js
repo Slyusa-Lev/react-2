@@ -1,8 +1,18 @@
 import React from 'react';
 import './App.css';
 
-function Hello(props) {
-  return <p>{props.value}</p>;
+class Hello extends React.Component {
+	componentDidMount() {
+		console.log('кряк');
+	}
+	
+	componentUnmount() {
+		console.log('unmount');
+	}
+	
+  render() {
+    return <p>{this.props.value}</p>;
+  }
 }
 
 class App extends React.Component {
@@ -11,10 +21,9 @@ class App extends React.Component {
     this.state = {
       values: ['Hello World!'],
       counter: 0,
-      worldIsNext: true,
     };
   }
-  
+	  
   handleClick() {
     const valuesArr = this.state.values.slice();
     if (this.state.counter % 2) {
@@ -24,7 +33,6 @@ class App extends React.Component {
     }
     
     this.setState({
-      worldIsNext: !this.state.worldIsNext,
       counter: this.state.counter + 1,
       values: valuesArr,
     });
@@ -32,8 +40,10 @@ class App extends React.Component {
   
   render() {
     const values = this.state.values;
-    const valuesRender = values.map((value) => {
-      return <Hello value={value} />
+    const valuesRender = values.map((value, index) => {
+      return <Hello 
+				value={value}
+				key={index}/>
     });
     
     return (
